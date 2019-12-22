@@ -13,19 +13,18 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
   def create
     @user = User.new(user_params)
     if @user.save
-      #log_in @user
       flash[:success] = "Usuário criado com sucesso!"
       redirect_to @user
     else
       render 'new'
     end
-  end
-
-  def edit
-    @user = User.find(params[:id])
   end
 
   def update
@@ -36,6 +35,12 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    User.find(params[:id]).destroy
+    flash[:success] = "User deleted"
+    redirect_to users_url
   end
 
   private
