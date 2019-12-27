@@ -1,6 +1,6 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container" style="width: 60%;">
-    <%= link_to "alliage web app", root_path, id: "logo" %>
+    <%= link_to "dabi atlante", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
@@ -12,7 +12,7 @@
               <li><%= link_to "Perfil", current_user %></li>
               <li><%= link_to "Usuários", users_path %></li>
               <li><%= link_to "Produtos", '#' %></li>
-              <li><%= link_to "Notícias", '#' %></li>
+              <li><%= link_to "Notícias", posts_path %></li>
               <li class="divider"></li>
               <li>
                 <%= link_to "Log out", logout_path, method: "delete" %>

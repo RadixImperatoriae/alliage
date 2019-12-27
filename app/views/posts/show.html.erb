@@ -1,0 +1,6 @@
+<% provide(:title, @post.title) %>
+<%= image_tag(@post.image.url) if @post.image.exists? %>
+<h1>
+   <%= @post.title %>
+</h1>
+<%= @post.content %>

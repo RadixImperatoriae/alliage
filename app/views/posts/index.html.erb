@@ -1,0 +1,20 @@
+<% provide(:title, 'All Posts') %>
+
+<div class="row">
+  <aside class="col-md-4">
+    <section class="post_form">
+      <%= render 'posts/new' %>
+    </section>
+  </aside>
+</div>
+
+<h1>Últimas noticias </h1>
+
+<ul class="posts">
+  <% @posts.each do |post| %>
+    <li>
+      <%= link_to post.title, post %>
+    </li>
+  <% end %>
+
+</ul>
