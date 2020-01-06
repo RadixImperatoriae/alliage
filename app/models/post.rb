@@ -7,5 +7,7 @@ class Post < ApplicationRecord
 
   validates :title, presence: true, length: { maximum: 30 }
   validates :content, presence: true, length: { maximum: 500 }
+  validates_attachment :image, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
+  validates_attachment_file_name :image, :matches => [/png\Z/, /jpe?g\Z/, /gif\Z/]
 
 end

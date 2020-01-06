@@ -1,0 +1,55 @@
+
+.post_div {
+  margin: 20px;
+}
+
+.post_ul {
+  list-style-type: none;
+  width: 500px;
+}
+
+.post_title {
+  font: bold 30px/1.5 Helvetica, Verdana, sans-serif;
+}
+
+.img{
+  float: left;
+  margin: 0 15px 0 0;
+  height: 400px;
+  width: 1200px;
+  object-fit: cover;
+}
+
+.post_img {
+  float: left;
+  margin: 0 15px 0 0;
+  height: 20px;
+  width: 30px;
+}
+
+.post_li_show p {
+  font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+}
+
+.post_li_show h1 {
+  font: 200 75px/1.5 Helvetica, Verdana, sans-serif;
+}
+
+.post_li_show {
+  padding: 10px;
+  overflow: auto;
+}
+
+.post_li p {
+  font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+}
+
+.post_li {
+  padding: 10px;
+  overflow: auto;
+}
+
+.post_li:hover {
+  background: #eee;
+  cursor: pointer;
+}

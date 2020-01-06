@@ -1,6 +1,7 @@
-<% provide(:title, @post.title) %>
-<%= image_tag(@post.image.url) if @post.image.exists? %>
-<h1>
-   <%= @post.title %>
-</h1>
-<%= @post.content %>
+<div class ="container" >
+   <% provide(:title, @post.title) %>
+   <%= image_tag(@post.image.url, style:"object-fit:cover;height:400px;width:100%;") if @post.image.exists? %>
+   <h1> <%= @post.title %> </h1>
+   <hr>
+   <p><%= @post.content %></p>
+</div>
