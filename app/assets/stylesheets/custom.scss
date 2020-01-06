@@ -1,6 +1,3 @@
-@import "bootstrap-sprockets";
-
-@import "bootstrap";
 body {
   padding-top: 60px;
 }
@@ -52,7 +49,7 @@ p {
 
 /* header */
 
-#logo {
+.header {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
@@ -143,4 +140,40 @@ input {
     padding: 10px 0;
     border-bottom: 1px solid $gray-lighter;
   }
+}
+
+.posts {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+  .content {
+    display: block;
+    margin-left: 60px;
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+  .timestamp {
+    color: $gray-light;
+    display: block;
+    margin-left: 60px;
+  }
+}
+
+side {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+}
+
+span.picture {
+  margin-top: 10px;
+   input {
+     border: 0;
+   }
 }

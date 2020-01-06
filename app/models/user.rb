@@ -1,5 +1,8 @@
 class User < ApplicationRecord
 
+  has_and_belongs_to_many :user_types
+  has_many :posts, dependent: :destroy
+
   attr_accessor :remember_token
 
   before_save { email.downcase! }

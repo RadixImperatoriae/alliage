@@ -1,0 +1,12 @@
+<%= form_for(Post.new) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <div>
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
+    <%= f.text_area :title, placeholder: "Título..." %>
+    <%= f.text_area :content, placeholder: "Compor notícia..." %>
+  </div>
+  <%= f.submit "Salvar", class: "btn btn-primary" %>
+<% end %>
