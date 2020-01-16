@@ -8,11 +8,90 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-      <%= render 'layouts/header' %>
+    <div class="container-fluid h-100">
       <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>
       <% end %>
-      <%= yield %>
-      <%= render 'layouts/footer' %>
+        <% if logged_in? %>
+          <div class="container-fluid">
+              <div class="row">
+                  <div id="sidebar">
+                    <ul class="nav flex-column flex-nowrap">
+                      <li>
+                        <%= image_tag("Alliage.png")%>
+                      </li>
+                      <li class="nav-item">
+                        <%= link_to "Início", root_path, class:"nav-link text-truncate py-4"%>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link collapsed text-truncate" href="#submenu1" data-toggle="collapse" data-target="#submenu1"><i class="fa fa-table"></i> <span class="d-none d-sm-inline">Produtos</span></a>
+                        <div class="collapse" id="submenu1" aria-expanded="false">
+                          <ul class="flex-column pl-4 nav">
+                            <li class="nav-item">
+                              <a class="nav-link py-2" href="#"><span>Todos os produtos</span></a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link py-2" href="#"><span>Adicionar Novo</span></a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link py-2" href="#"><span>Categorias</span></a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="nav-item"><a class="nav-link text-truncate py-4" href="#"><i class="fa fa-bar-chart"></i> <span class="d-none d-sm-inline">Promoções</span></a></li>
+                      <li class="nav-item">
+                        <a class="nav-link collapsed text-truncate" href="#submenu2" data-toggle="collapse" data-target="#submenu2"><i class="fa fa-table"></i> <span class="d-none d-sm-inline">Notícias</span></a>
+                        <div class="collapse" id="submenu2" aria-expanded="false">
+                          <ul class="flex-column pl-4 nav">
+                            <li class="nav-item">
+                              <%= link_to "Todos as notícias", posts_path, class: "nav-link py-2" %>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link py-2" href="#"><span>Adicionar Nova</span></a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link collapsed text-truncate py-4" href="#submenu3" data-toggle="collapse" data-target="#submenu3"><i class="fa fa-table"></i> <span class="d-none d-sm-inline">Usuários</span></a>
+                        <div class="collapse" id="submenu3" aria-expanded="false">
+                          <ul class="flex-column pl-4 nav">
+                            <li class="nav-item">
+                              <%= link_to "Todos os usuários", users_path, class: "nav-link py-2" %>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link py-2" href="#"><span>Adicionar Novo</span></a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="nav-item"><%= link_to "Sair", logout_path, method: "delete", class: "nav-link text-truncate" %></li>
+                    </ul>
+                  </div>
+                  <div class="col">
+                    <%= yield %>
+                  </div>
+              </div>
+          </div>
+        <% else %>
+          <div class="row justify-content-center h-100">
+            <div class="col-sm-6 hidden-md-down" id="login_div">
+              <%= image_tag("image-login.png") %>
+            </div>
+            <div class="col-sm-6 hidden-md-down" id="centeredlogin">
+              <div class="row">
+                <div class="col-sm-1" >
+                </div>
+                <div class="col-sm-10" >
+                  <%= render 'sessions/new' %>
+                </div>
+                <div class="col-sm-1" >
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+    </div>
   </body>
 </html>
