@@ -7,7 +7,7 @@ gem 'bootstrap', '~> 4.0.0'
 gem 'popper_js', '~> 1.11'
 #gem 'bootstrap-sass', '3.4.1'
 # Use Puma as the app server
-gem 'puma', '~> 3.12.2'
+gem 'puma', '~> 4.3.9'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0.5'
 # Use Uglifier as compressor for JavaScript assets
